@@ -2,10 +2,12 @@
   "version": 2,
   "builds": [
     { "src": "app.js", "use": "@vercel/node" },
-    { "src": "api/adapter.js", "use": "@vercel/node" }
+    { "src": "api/adapter.js", "use": "@vercel/node" },
+    { "src": "api/lyric.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/adapter", "dest": "/api/adapter.js" },
+    { "src": "/api/lyric", "dest": "/api/lyric.js" },
     { "src": "/(.*)", "dest": "/app.js" }
   ]
 }
