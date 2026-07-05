@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       artist: (song.ar || []).map((a) => a.name).join("/") || "未知歌手",
       url: urlMap[tid] || "",
       cover: song.al?.picUrl || "",
-      lrc: `${base}/api/lyric?id=${tid}`, // 改成指向新接口的链接，不再塞原文
+      lrc: `${base}/api/lyric?id=${tid}&name=${encodeURIComponent(song.name || "")}&artist=${encodeURIComponent((song.ar || []).map(a => a.name).join("/"))}`,
     };
   });
 
